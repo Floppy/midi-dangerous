@@ -3,7 +3,7 @@
 SendMode InputThenPlay  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
-#include Midi.ahk
+#include AutoHotKey-Midi/Midi.ahk
 
 midi := new Midi()
 midi.OpenMidiIn( 0 )
