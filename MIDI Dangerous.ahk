@@ -1,17 +1,18 @@
-﻿#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
-; #Warn  ; Enable warnings to assist with detecting common errors.
-SendMode InputThenPlay  ; Recommended for new scripts due to its superior speed and reliability.
-SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+﻿#NoEnv
+; #Warn
+
+SendMode InputThenPlay
+SetWorkingDir %A_ScriptDir%
 
 #include AutoHotKey-Midi/Midi.ahk
 
-midi := new Midi()
-midi.OpenMidiIn( 0 )
+dev := new Midi()
+dev.OpenMidiIn( 0 )
 
 Return
 
 MidiNoteOnA4:
-	event := midi.MidiIn()
+	event := dev.MidiIn()
 	if (event.velocity > 0)
 		Send C
 	Return
